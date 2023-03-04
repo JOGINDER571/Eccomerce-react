@@ -1,0 +1,88 @@
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div1 {
+  width: 15%;
+}
+.cards {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  width: 70%;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.card.horizontal .card-image img {
+  max-width: none !important;
+}
+.card.horizontal .card-image {
+  max-width: none !important;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .left-part {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.left-part .left-content {
+  display: flex;
+  flex-direction: column;
+}
+.right-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.card-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-product-field {
+  border: none;
+  outline: none;
+  border-bottom: none !important;
+}
+.my-product-field:focus {
+  outline: none;
+  border-bottom: 2px solid gray !important;
+}
+
+.left-content .edit-price {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.card-image img {
+  width: 27vw !important;
+  height: 33vh;
+}
+
+.div2 {
+  width: 15%;
+}
+@media only screen and (max-width: 500px) {
+  .edit-card .card {
+    flex-direction: column !important;
+    width: 122% !important;
+  }
+  .edit-card .card .card-image img {
+    width: 52vw !important;
+    left: -26px;
+  }
+  .products{
+    width: 83% !important;
+  }
+}

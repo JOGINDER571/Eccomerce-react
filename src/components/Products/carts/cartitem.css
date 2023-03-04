@@ -1,0 +1,29 @@
+.cart-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+.cart-item .card{
+    width: 80% !important;
+}
+.right-part{
+    padding: 0 1rem;
+}
+.card-action{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+@media only screen and (max-width:500px){
+    .cart-item .card{
+        flex-direction: column !important;
+        width: 95% !important;
+    }
+    .cart-item .card .card-image img{
+        width: 52vw !important;
+        left: -26px;
+    }
+}

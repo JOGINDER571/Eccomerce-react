@@ -1,0 +1,11 @@
+.MuiRating-visuallyHidden{
+    display: none !important;
+}
+.MuiRating-icon{
+    color: yellow !important;
+    width: .7rem !important;
+}
+.css-dqr9h-MuiRating-label{
+    font-size: 1.3rem !important;
+    padding-left: .4rem !important;
+}

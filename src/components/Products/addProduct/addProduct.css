@@ -1,0 +1,23 @@
+
+.add-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.add-product form{
+    width: 30% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.input-field ::placeholder{
+    font-weight: bold !important;
+    color: gray  !important;
+}
+@media only screen and (max-width:500px){
+    .add-product form{
+        width: 80% !important;
+    }
+}
