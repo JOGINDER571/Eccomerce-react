@@ -27,7 +27,7 @@ const ProductCard = ({ data }) => {
   // console.log(initialData);
   const productList = useSelector((state) => state.productData);
   const cartList = useSelector((state) => state.cartData);
-
+  console.log("data",data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -56,6 +56,7 @@ const ProductCard = ({ data }) => {
       }
     });
     dispatch(updateProduct(newUpdatedProduct));
+    
     toast("Successfully edit");
   };
 
@@ -76,11 +77,12 @@ const ProductCard = ({ data }) => {
       }
     });
     dispatch(addToCart(newUpdatedCart));
+    window.location.reload();
   };
-  const handleSave = () => {
-  
-    dispatch(updateProduct(productList));
+  const handleCancel = () => {
+    window.location.reload();
   };
+ 
 
   return (
     <>
@@ -221,7 +223,7 @@ const ProductCard = ({ data }) => {
             </button>
             <a
               onClick={() => {
-                handleSave();
+                handleCancel();
                 setActiveService(true);
               }}
               className="waves-effect waves-light btn-small"

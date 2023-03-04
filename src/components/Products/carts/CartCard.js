@@ -11,6 +11,7 @@ const CartCard = ({ data }) => {
   const cartList = useSelector((state) => state.cartData);
   const dispatch=useDispatch();
   const handleRemoveCart=()=>{
+    
     let newUpdatedProduct = [];
     // cartList.pop();
     cartList?.map((i) => {
@@ -22,12 +23,11 @@ const CartCard = ({ data }) => {
     
     dispatch(removeFromCart(newUpdatedProduct));
     toast(`${data?.title} is removed`);
+    
   }
   return (
     <>
-    <div>
-        <ToastContainer style={{marginTop:'4rem'}}/>
-      </div>
+    
     <div style={{width:'20%'}}></div>
       <div className="card ">
         <div className="left-part">

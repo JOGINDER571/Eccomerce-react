@@ -13,7 +13,7 @@ const Products = () => {
     if(result.length==0){
       dispatch(getProduct());
     }
-  }, []);
+  }, [result]);
   return (
     <div className="products">
       <div className="div1"></div>
