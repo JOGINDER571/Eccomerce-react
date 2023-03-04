@@ -27,7 +27,7 @@ const ProductCard = ({ data }) => {
   // console.log(initialData);
   const productList = useSelector((state) => state.productData);
   const cartList = useSelector((state) => state.cartData);
-  console.log("data",data);
+  // console.log("data",data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -77,10 +77,12 @@ const ProductCard = ({ data }) => {
       }
     });
     dispatch(addToCart(newUpdatedCart));
-    window.location.reload();
+    setTimeout(()=>{
+      window.location.reload();
+    },3000);
   };
   const handleCancel = () => {
-    window.location.reload();
+    // window.location.reload();
   };
  
 
@@ -189,7 +191,7 @@ const ProductCard = ({ data }) => {
           <div className="card-action">
             <button
               onClick={() => {
-                setActiveService(false);
+                setActiveService(false);  
               }}
               className="btn-floating btn-large waves-effect waves-light blue"
               style={{
