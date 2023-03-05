@@ -1,12 +1,12 @@
 import React from "react";
 import User from "../Assets/user.svg";
 import Cart from "../Assets/cart.svg";
-// import Add from "../Assets/add.svg";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./navbar.css";
 const Navbar = () => {
   const cartList = useSelector((state) => state.cartData);
+  //define the length variable for storing the latest length of cartlist
   let length = cartList?.length;
   console.log(length);
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Navbar = () => {
               
               <i className="material-icons right">add</i>
             </a>
-            {/* <img src={Add} alt="asf" /> */}
+          
           </li>
           <li style={{ display: "flex", alignItems: "center" }}>
             <span onClick={() => navigate("/carts")} className="cart-icon">

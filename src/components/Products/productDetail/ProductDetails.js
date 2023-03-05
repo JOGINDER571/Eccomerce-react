@@ -10,10 +10,12 @@ import 'react-toastify/dist/ReactToastify.css';
 const ProductDetails = () => {
   const [detail, setDetail] = useState();
   const params = useParams();
+  //get the id of product through the useParams
   let id = params.id;
+  //getting data from the store throuh uesSelector
   const cartList = useSelector((state) => state.cartData);
-  console.log("cl", cartList);
-
+  
+ //   fetching the data with the help of get request
   const url = `https://dummyjson.com/products/${params.id}`;
   useEffect(() => {
     const fetch = async () => {
@@ -34,6 +36,7 @@ const ProductDetails = () => {
       }
     });
     if (flag && detail.length!==0) {
+      //dispatch the data to the cartlist
       dispatch(addToCart([detail, ...cartList]));
       toast(`${detail.title} is added to cart`);
     }

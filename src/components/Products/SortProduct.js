@@ -1,3 +1,4 @@
+//implement the sorting function to sort the product with the price
 import React, { useState } from "react";
 import {useDispatch,useSelector} from 'react-redux';
 import { updateProduct } from "../../redux/actions/productAction";
@@ -8,10 +9,13 @@ const SortProduct = () => {
   const dispatch=useDispatch();
   const products=useSelector((state)=>state.productData);
   const handleSort=()=>{
+    //define the variable to store the sorted list
     const filtered=products.sort((a,b)=>a.price-b.price);
+    // updating the product list
     dispatch(updateProduct([...filtered]));
     toast("Products are sorted");
   }
+  //we can unsort with the help of handle close function
   const handleClose=()=>{
     const sorted=products.sort((a,b)=>a.id-b.id);
     console.log(products);

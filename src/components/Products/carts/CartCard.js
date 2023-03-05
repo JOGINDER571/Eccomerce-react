@@ -8,19 +8,19 @@ removeFromCart
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const CartCard = ({ data }) => {
+    //getting data from the store throuh uesSelector
   const cartList = useSelector((state) => state.cartData);
   const dispatch=useDispatch();
   const handleRemoveCart=()=>{
-    
+    //initiate the array for storing the updated product
     let newUpdatedProduct = [];
-    // cartList.pop();
     cartList?.map((i) => {
       if (i.id !== data.id) {
         newUpdatedProduct.push(i);
       } 
         
     });
-    
+    //store the product to the store
     dispatch(removeFromCart(newUpdatedProduct));
     toast(`${data?.title} is removed`);
     

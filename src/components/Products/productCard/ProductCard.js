@@ -7,6 +7,7 @@ import Ratings from "../rating/Ratings";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ProductCard = ({ data }) => {
+  //defining the variables for managing the states
   const [activeService, setActiveService] = useState(true);
   const [title, setTitle] = useState(data.title);
   const [price, setPrice] = useState(data.price);
@@ -24,13 +25,13 @@ const ProductCard = ({ data }) => {
     stock: data.stock,
     thumbnail: data.thumbnail,
   };
-  // console.log(initialData);
+    //getting data from the store throuh uesSelector
   const productList = useSelector((state) => state.productData);
   const cartList = useSelector((state) => state.cartData);
-  // console.log("data",data);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+// Here we are editing the product
   const updateHandle = async (data) => {
     let url = `https://dummyjson.com/products/${data.id}`;
     let makeReq = await fetch(url, {
@@ -55,11 +56,12 @@ const ProductCard = ({ data }) => {
         newUpdatedProduct.push(initialData);
       }
     });
+      //store the product to the store
     dispatch(updateProduct(newUpdatedProduct));
     
     toast("Successfully edit");
   };
-
+// when click on the delete button this function will run
   const handledelete = (id) => {
     let newUpdatedProduct = [];
     
@@ -76,13 +78,11 @@ const ProductCard = ({ data }) => {
         newUpdatedCart.push(val);
       }
     });
+    //here we are updating the cart
     dispatch(addToCart(newUpdatedCart));
     setTimeout(()=>{
       window.location.reload();
     },3000);
-  };
-  const handleCancel = () => {
-    // window.location.reload();
   };
  
 
@@ -225,7 +225,6 @@ const ProductCard = ({ data }) => {
             </button>
             <a
               onClick={() => {
-                handleCancel();
                 setActiveService(true);
               }}
               className="waves-effect waves-light btn-small"

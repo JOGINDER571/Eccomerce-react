@@ -1,5 +1,5 @@
 import {GET_PRODUCT,UPDATE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from '../constant';
-
+//send the response to the reducer
 export const getProduct=()=>{
     console.log("action");
     return{

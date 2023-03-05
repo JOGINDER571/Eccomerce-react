@@ -9,6 +9,7 @@ const Products = () => {
   // let result =response.length!==0 ?response:[];
   console.log("products", result);
   const dispatch = useDispatch();
+  // react hooks for dispatch the product list
   useEffect(() => {
     if(result.length==0){
       dispatch(getProduct());

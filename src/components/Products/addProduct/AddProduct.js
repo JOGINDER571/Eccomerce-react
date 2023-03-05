@@ -6,14 +6,19 @@ import { useNavigate } from "react-router-dom";
 import FetchApi from "../../api/FetchApi";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const AddProduct = () => {
+  //All the states are defined below
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [rating, setRating] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  //getting data from the store throuh uesSelector
   const products = useSelector((state) => state.productData);
+
   let initialData = {
     // id,
     title,
@@ -21,7 +26,7 @@ const AddProduct = () => {
     rating,
     description,
   };
-  //   console.log(initialData);
+  // making post request to add the product to the api
   const url = `https://dummyjson.com/products/add`;
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +47,7 @@ const AddProduct = () => {
       setTimeout(()=>{
         navigate("/");
       },[3000]);
+      //rect toastify for the notification
       toast("Added successfully");
     });
   };

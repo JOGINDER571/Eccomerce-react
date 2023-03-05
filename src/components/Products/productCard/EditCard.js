@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 const EditCard = ({ data }) => {
   return (
     <>
+      {/* with the help of map function we can show the every product card to the browser */}
       <div className="edit-card">
         {data.length !== 0 ? (
           data.map((data, index) => {
